@@ -1,0 +1,13 @@
+[Unit]
+Description="OpenWRT"
+After=network.target
+[Service]
+Type=simple
+#ExecStartPre=/bin/sh -c 'until ping -c1 google.com; do sleep 1; done;'
+ExecStart=
+Restart=always
+RestartSec=5s
+
+
+[Install]
+WantedBy=network-online.target
